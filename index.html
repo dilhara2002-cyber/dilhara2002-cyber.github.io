@@ -3,23 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dilhara's Portfolio</title>
+  <title>Dilhara’s Portfolio</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">Dilhara</div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
   <!-- Header -->
   <header>
-    <h1>Hello, I'm Dilhara</h1>
-    <p>Cybersecurity Student & Web Developer</p>
-    <a href="#projects" class="btn">See My Work</a>
+    <div class="header-content">
+      <h1>Hello, I'm Dilhara</h1>
+      <p>Cybersecurity & Web Development Student</p>
+      <a href="#projects" class="btn">See My Work</a>
+    </div>
   </header>
 
   <!-- About Section -->
   <section id="about">
     <h2>About Me</h2>
     <p>
-      I am a cybersecurity student passionate about web development, ethical hacking, and learning new technologies. I enjoy building projects that combine security and functionality.
+      I am Dilhara, a passionate cybersecurity and web development student. I enjoy building secure and functional projects, learning new technologies, and improving my skills in programming and ethical hacking.
     </p>
   </section>
 
@@ -28,16 +42,16 @@
     <h2>Projects</h2>
     <div class="project-list">
       <div class="project">
-        <h3>Project 1</h3>
-        <p>Short description of Project 1.</p>
+        <h3>Portfolio Website</h3>
+        <p>My personal portfolio landing page hosted on GitHub Pages.</p>
       </div>
       <div class="project">
-        <h3>Project 2</h3>
-        <p>Short description of Project 2.</p>
+        <h3>Python Automation Scripts</h3>
+        <p>Automation scripts and small tools for practice and learning.</p>
       </div>
       <div class="project">
-        <h3>Project 3</h3>
-        <p>Short description of Project 3.</p>
+        <h3>Web Security Lab</h3>
+        <p>Hands-on exercises exploring vulnerabilities and security solutions.</p>
       </div>
     </div>
   </section>
@@ -45,27 +59,42 @@
   <!-- Skills Section -->
   <section id="skills">
     <h2>Skills</h2>
-    <ul>
-      <li>Cybersecurity fundamentals</li>
-      <li>Web development (HTML, CSS, JS)</li>
-      <li>Python programming</li>
-      <li>Ethical hacking basics</li>
-    </ul>
+    <div class="skills-list">
+      <span>Cybersecurity</span>
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JavaScript</span>
+      <span>Python</span>
+      <span>Ethical Hacking</span>
+    </div>
   </section>
 
   <!-- Contact Section -->
   <section id="contact">
     <h2>Contact Me</h2>
-    <p>Connect with me on:</p>
-    <a href="https://github.com/dilhara2002-cyber" target="_blank">GitHub</a> |
-    <a href="https://www.linkedin.com/in/your-linkedin" target="_blank">LinkedIn</a> |
-    <a href="mailto:your-email@example.com">Email</a>
+    <p>Connect with me:</p>
+    <div class="social-links">
+      <a href="https://github.com/dilhara2002-cyber" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+      <a href="https://www.linkedin.com/in/dilhara" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="mailto:dilhara2002@example.com"><i class="fas fa-envelope"></i> Email</a>
+    </div>
   </section>
 
   <!-- Footer -->
   <footer>
     <p>© 2025 Dilhara. All rights reserved.</p>
   </footer>
+
+  <!-- Smooth scrolling -->
+  <script>
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href'))
+                .scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
 
 </body>
 </html>
