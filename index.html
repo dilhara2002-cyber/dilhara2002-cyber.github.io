@@ -6,6 +6,7 @@
   <title>Dilhara Portfolio</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
@@ -13,16 +14,16 @@
   <nav>
     <div class="logo">Dilhara</div>
     <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
     </ul>
   </nav>
 
   <!-- Hero Section -->
   <header>
-    <div class="hero-content">
+    <div class="hero-content" data-aos="fade-up">
       <h1>Hi, I'm Dilhara</h1>
       <p>Cybersecurity Enthusiast & Web Developer</p>
       <a href="#projects" class="btn">Explore My Work</a>
@@ -30,26 +31,26 @@
   </header>
 
   <!-- About Section -->
-  <section id="about">
+  <section id="about" data-aos="fade-right">
     <h2>About Me</h2>
-    <p>I am a cybersecurity and web development student passionate about building secure and functional projects.</p>
+    <p>I am a cybersecurity and web development student passionate about building secure and functional projects. I love learning new technologies and creating interactive web experiences.</p>
   </section>
 
   <!-- Projects Section -->
-  <section id="projects">
+  <section id="projects" data-aos="fade-left">
     <h2>My Projects</h2>
     <div class="project-list">
-      <div class="project-card">
+      <div class="project-card" data-aos="zoom-in">
         <h3>Portfolio Website</h3>
         <p>My personal portfolio hosted on GitHub Pages.</p>
         <a href="https://github.com/dilhara2002-cyber/dilhara2002-cyber.github.io" target="_blank">View on GitHub</a>
       </div>
-      <div class="project-card">
+      <div class="project-card" data-aos="zoom-in" data-aos-delay="100">
         <h3>Project 2</h3>
         <p>Short description of Project 2.</p>
         <a href="https://github.com/dilhara2002-cyber/Project2" target="_blank">View on GitHub</a>
       </div>
-      <div class="project-card">
+      <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
         <h3>Project 3</h3>
         <p>Short description of Project 3.</p>
         <a href="https://github.com/dilhara2002-cyber/Project3" target="_blank">View on GitHub</a>
@@ -58,7 +59,7 @@
   </section>
 
   <!-- Skills Section -->
-  <section id="skills">
+  <section id="skills" data-aos="fade-up">
     <h2>Skills</h2>
     <div class="skills-list">
       <span>Cybersecurity</span>
@@ -71,10 +72,47 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact">
+  <section id="contact" data-aos="fade-up">
     <h2>Contact Me</h2>
     <p>Connect with me:</p>
     <div class="social-links">
       <a href="https://github.com/dilhara2002-cyber" target="_blank"><i class="fab fa-github"></i> GitHub</a>
       <a href="https://www.linkedin.com/in/dilhara" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-      <a href="m
+      <a href="mailto:dilhara2002@example.com"><i class="fas fa-envelope"></i> Email</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Dilhara. All rights reserved.</p>
+  </footer>
+
+  <!-- JS Libraries -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    // Smooth scroll
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // Active nav highlighting
+    window.addEventListener('scroll', () => {
+      const sections = document.querySelectorAll('section');
+      const scrollPos = window.scrollY + 100;
+      sections.forEach(sec => {
+        const top = sec.offsetTop;
+        const bottom = top + sec.offsetHeight;
+        const id = sec.getAttribute('id');
+        if (scrollPos >= top && scrollPos < bottom) {
+          document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+          document.querySelector(`.nav-link[href="#${id}"]`).classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
